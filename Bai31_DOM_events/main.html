@@ -7,7 +7,23 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>JavaScript</h1>
+    <!-- ATTRIBUTE EVENT -->
+    <h1 onclick="console.log(Math.random())">onclick</h1>
+    <h1 onmouseover="console.log(Math.random())">onmouseover</h1>
+    <h1 onmouseout="console.log(this.innerText)">onmouseout</h1>
+    
+    <!-- Dù là bắt sự kiện khi tác động vào span nhưng this trả về vẫn là của cha -->
+    <h1 onclick="console.log(this)">
+        <span onclick="console.log(this)">DOM event</span>
+        <!-- Sự kiện nổi bọt đã tác động cả vào thằng cha và thằng con -->
+    </h1>
+
+    <!-- Assign event using the element node -->
+    <h1 class="nodeH1">Element node1</h1>
+    <h1 class="nodeH1">Element node2</h1>
+    <h1 class="nodeH1">Element node3</h1>
+
+    
     <script src="main.js"></script>
 </body>
 </html>

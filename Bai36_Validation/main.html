@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FormSigup</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <!-- Form cấu trúc form -->
+    <div class="main">
+
+        <form action=""  class="form" id="form-1">
+            <!-- Tiêu đề form -->
+            <h3 class="heading">Thành viên đăng ký</h3>
+            <p class="desc">Cách tạo form đăng ký cùng Nguyễn Thái Nguyên</p>
+
+            <div class="spacer"></div>
+
+            <!-- Lưu ý: trong mỗi form-group sẽ có các yếu tố như: 
+                1. label
+                2. input
+                3. message
+            -->
+            <!-- Form nhập tên -->
+            <div class="form-group">
+                <input type="text" name="fullname" id="fullname" class="form-control" placeholder="VD: Nguyễn Thái Nguyên">
+                <span class="form-message"></span>
+            </div>
+
+            <!-- Form nhập email -->
+            <div class="form-group">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" name="email" id="email" class="form-control" placeholder="VD: example@gmail.com">
+                <span class="form-message"></span>
+            </div>
+
+            <!-- Form nhập mật khẩu -->
+            <div class="form-group">
+                <label for="password" class="form-label">Mật khẩu</label>
+                <input type="password" name="password" id="password" class="form-control" placeholder="Nhập password">
+                <span class="form-message"></span>
+            </div>
+
+            <!-- Form nhập lại password -->
+            <div class="form-group">
+                <label for="password_confirmation" class="form-label">Nhập lại mật khẩu</label>
+                <input type="password" name="password_confirmation" class="form-control" id="password_confirmation" placeholder="Nhập password">
+                <span class="form-message"></span>
+            </div>
+
+
+            <!-- Form nhập tỉnh thành phố -->
+            <div class="form-group">
+                <label for="province" class="form-label">Nhập Tỉnh /TP</label>
+                <select name="province" id="province" class="form-control">
+                    <option value="">--Chọn Tỉnh / TP</option>
+                    <option value="hni">Hà Nội</option>
+                    <option value="hpg">Hải Phòng</option>
+                </select>
+                <span class="form-message"></span>
+            </div>
+
+            <!-- Form submit -->
+            <button type="submit" class="form-submit">Đăng ký</button>
+        </form>
+
+    </div>
+    <script src="validator.js"></script>
+
+    <script>
+        //Mong muốn khi sử dụng thư viên
+        Validator({
+            form: '#form-1',
+            formGroupSelector: '.form-group',
+            errorSelector: '.form-message',
+            rules: [
+                Validator.isRequired('#fullname', 'Vui lòng nhập tên đầy đủ của bạn'),
+                Validator.isRequired('#email'),
+                Validator.isEmail('#email'),
+                Validator.minLength('#password', 6),
+                Validator.isRequired('#password_confirmation'),
+                Validator.isRequired('#province'),
+                Validator.isConfirmed('#password_confirmation', function(){
+                    return document.querySelector('#form-1 #password').value
+                }, 'Mật khẩu nhập lại không chính xác')
+            ],
+            onSubmit: function(data){
+                //Call API
+                console.log(data)
+            }
+        })
+    </script>
+
+</body>
+</html>

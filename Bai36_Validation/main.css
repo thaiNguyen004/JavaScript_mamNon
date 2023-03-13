@@ -1,0 +1,118 @@
+﻿/* Quy tắc chung web nào cũng làm vậy */
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/* Quy định chung cho cả DOM có font-size, font-family, màu chữ gốc */
+html{
+    color: #333;
+    font-size: 63%;
+    font-family: sans-serif;
+}
+
+/* CSS cho main (thẻ bọc của form) */
+.main{
+    background-color: #f1f1f1;
+    min-height: 100vh;
+    display: flex;
+    /* CSS cho node con là node con là node form ra giữa */
+    justify-content: center;
+}
+
+.form{
+    width: 360px;
+    text-align: center;
+    min-height: 100px;
+    background-color: #fff;
+    padding: 32px 24px;
+    border-radius: 14px;
+    /* Cho bản thân căn giữa theo chiều dọc */
+    align-self: center;
+    box-shadow: 0 5px 2px 0 rgba(51, 62, 73, .1);
+}
+
+/* CSS cho title heading */
+.form .heading{
+    font-size: 2rem;
+}
+
+.form .desc{
+    color: #636d77;
+    font-size: 1.6rem;
+    font-weight: 100;
+    line-height: 2.4rem;
+    margin-top: 16px;
+}
+
+.spacer{
+    margin-top: 30px;
+}
+
+.form-group{
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-label, .form-message{
+    text-align: left;
+}
+
+/* CSS chung cho form label */
+.form-label{
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.4rem;
+    padding-bottom: 6px;
+}
+
+/* CSS cho input */
+.form-control{
+    height: 40px;
+    padding: 8px 12px;
+    font-size: 1.4rem;
+    outline: none;
+    border: 1px solid #b3b3b3;
+    border-radius: 3px
+}
+
+.form-control:hover{
+    border: 1px solid #1dbfaf;
+}
+
+/* CSS khi lỗi */
+
+.form-group.invalid .form-control{
+    border: 1px solid #f33a58;
+}
+
+.form-group.invalid .form-message{
+    color: #f33a58;
+}
+
+/* CSS cho form-message */
+
+.form-message{
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    padding: 4px 0 0;
+}
+
+.form-submit{
+    outline: none;
+    width: 100%;
+    padding: 12px 0;
+    background-color: #1fbfaf;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 10px;
+    font-weight: 300;
+    font-size: 14px;
+}
+
+.form-submit:hover{
+    background-color: #1ac7b6;
+}

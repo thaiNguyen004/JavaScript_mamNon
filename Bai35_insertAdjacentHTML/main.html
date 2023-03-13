@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        width: 50%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-evenly;
+        border: 3px dashed red;
+    }
+    .container .product,.container .myorder{
+        width: 100%;
+        background-color: grey;
+        position: relative;
+    }
+    .container .product{
+        border-right: 3px dashed red;
+    }
+    .product .box{
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        margin: 10px;
+        background-color: white;
+    }
+    .product .box .button button{
+        padding: 10px 20px;
+        color: black;
+        background-color: grey;
+    }
+    .myorder h1{
+        text-align: center;
+    }
+    .myorder .infomation{
+        display: flex;
+        background-color: white;
+        margin: 10px;
+        justify-content: space-evenly;
+    }
+    .myorder .infomation .huy{
+        padding: 0 10px;
+    }
+    .myBag{
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        width: 50%;
+        height: 30px;
+        background-color: green;
+    }
+</style>
+<body>
+
+    <div class="container">
+        <div class="product">
+            <div class="box">
+                <div class="info" id="SP1">
+                    <h2>Sản phẩm 1</h2>
+                    <p>Giá <div class="price">12000</div></p>
+                </div>
+                <div class="button">
+                    <button class="order">Order</button>
+                </div>
+            </div>
+            <div class="box">
+                <div class="info" id="SP2">
+                    <h2>Sản phẩm 2</h2>
+                    <p>Giá <div class="price">20</div></p>
+                </div>
+                <div class="button">
+                    <button class="order">Order</button>
+                </div>
+            </div>
+            <div class="box">
+                <div class="info" id="SP3">
+                    <h2>Sản phẩm 3</h2>
+                    <p>Giá <div class="price">2000</div></p>
+                </div>
+                <div class="button">
+                    <button class="order">Order</button>
+                </div>
+            </div>
+            <div class="box">
+                <div class="info" id="SP4">
+                    <h2>Sản phẩm 4</h2>
+                    <p>Giá <div class="price">1000000</div></p>
+                </div>
+                <div class="button">
+                    <button class="order">Order</button>
+                </div>
+            </div>
+        </div>
+        <div class="myorder">
+            <h1>Giỏ hàng</h1>
+            
+            <div class="myBag">
+
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
